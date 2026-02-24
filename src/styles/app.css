@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #2d3748;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Container */
+.app {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a5568;
+  letter-spacing: -0.5px;
+}
+
+.app-header h1 span {
+  color: #667eea;
+}
+
+.app-header p {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Add Habit Form */
+.add-habit-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.add-habit-form input[type='text'] {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2d3748;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.add-habit-form input[type='text']::placeholder {
+  color: #a0aec0;
+}
+
+.add-habit-form input[type='text']:focus {
+  border-color: #667eea;
+}
+
+.btn-add {
+  padding: 0.65rem 1.25rem;
+  background-color: #667eea;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-add:hover {
+  background-color: #5a67d8;
+}
+
+.btn-add:active {
+  transform: scale(0.97);
+}
+
+/* Habit List */
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.habit-list-empty {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 1rem;
+  padding: 1.5rem 0;
+}
+
+/* Habit Item */
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease;
+}
+
+.habit-item:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.habit-item.completed {
+  background-color: #f0fff4;
+}
+
+/* Checkbox */
+.habit-checkbox {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border: 2px solid #cbd5e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  background-color: #ffffff;
+}
+
+.habit-checkbox:hover {
+  border-color: #667eea;
+}
+
+.habit-checkbox.checked {
+  background-color: #48bb78;
+  border-color: #48bb78;
+}
+
+.habit-checkbox.checked::after {
+  content: '✓';
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Habit Info */
+.habit-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.habit-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.habit-item.completed .habit-name {
+  color: #718096;
+  text-decoration: line-through;
+}
+
+.habit-streak {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: #718096;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.streak-count {
+  font-weight: 700;
+  color: #ed8936;
+}
+
+.streak-fire {
+  font-size: 0.9rem;
+}
+
+/* Delete Button */
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #cbd5e0;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  color: #fc8181;
+}
+
+/* Today's Date Banner */
+.today-banner {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #718096;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3px;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+  color: #a0aec0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .add-habit-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-add {
+    text-align: center;
+  }
+
+  .habit-item {
+    padding: 0.85rem 1rem;
+  }
+}
